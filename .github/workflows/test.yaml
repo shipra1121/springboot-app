@@ -1,6 +1,6 @@
 name : Github workflow
 
-On:
+on:
   Push:
     branches:
         - main
@@ -9,7 +9,7 @@ On:
         - main
   workflow_dispatch:
         
-Jobs:
+jobs:
  deploy:
    runs-On: ubuntu-latest
 
