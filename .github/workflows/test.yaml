@@ -13,17 +13,17 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-  steps:
-  -name: checkout code
-   uses: action/checkout@v3
-   with:  
-     token: 
+    steps:
+        -name: checkout code
+         uses: action/checkout@v3
+         with:  
+         token: 
 
-  -name: Build
-   run: mvn -f MyAwesomeApp/pom.xml clean install
+        -name: Build
+         run: mvn -f MyAwesomeApp/pom.xml clean install
 
-  - name: Upload JAR artifacts
-    uses: actions/upload-artifact@v3
-    with:
-      name: my-application-jars
-      path: '**/*.jar'    
+        - name: Upload JAR artifacts
+          uses: actions/upload-artifact@v3
+          with:
+          name: my-application-jars
+          path: '**/*.jar'    
