@@ -1,0 +1,29 @@
+name : Github workflow
+
+On:
+  Push:
+    branches:
+        - main
+  Pull_request:   
+    branches:
+        - main
+  workflow_dispatch:
+        
+Jobs:
+ deploy:
+   runs-On: node
+
+  steps:
+  -name: checkout code
+   uses: action/checkout@v3
+   with:  
+     token: 
+
+  -name: Build
+   run: mvn -f MyAwesomeApp/pom.xml clean install
+
+  - name: Upload JAR artifacts
+    uses: actions/upload-artifact@v3
+    with:
+      name: my-application-jars
+      path: '**/*.jar'    
