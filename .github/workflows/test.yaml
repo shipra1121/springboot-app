@@ -15,15 +15,13 @@ jobs:
 
     steps:
         -name: checkout code
-         uses: action/checkout@v3
-         with:  
-         token: 
-
+         uses: action/checkout@v4
+         
         -name: Build
          run: mvn -f MyAwesomeApp/pom.xml clean install
 
-        - name: Upload JAR artifacts
-          uses: actions/upload-artifact@v3
-          with:
-          name: my-application-jars
-          path: '**/*.jar'    
+        -name: Upload JAR artifacts
+         uses: actions/upload-artifact@v3
+         with:
+            name: my-application-jars
+            path: '**/*.jar'    
