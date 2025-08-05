@@ -11,7 +11,7 @@ On:
         
 Jobs:
  deploy:
-   runs-On: node
+   runs-On: ubuntu-latest
 
   steps:
   -name: checkout code
